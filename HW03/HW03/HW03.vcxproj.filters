@@ -15,15 +15,15 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="\\cs1\2018\jschroeder18\CS-273-1\HW02\HW02\Source.cpp">
+    <ClCompile Include="Source.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="\\cs1\2018\jschroeder18\CS-273-1\HW02\HW02\readint.cpp">
+    <ClCompile Include="readint.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="\\cs1\2018\jschroeder18\CS-273-1\HW02\HW02\readint.h">
+    <ClInclude Include="readint.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
