@@ -31,7 +31,9 @@ protected:
 		int overdraft, charge;
 
 		// Polymorphism: calls the correct virtual methods from the specific customer type
-		// FIXME: Get the overdraft and check charge information from this accounts customer
+	
+		overdraft = customer->Get_OVERDREFT_PENELTY();
+		charge = customer->Get_CHECK_CHARGE();
 
 		std::stringstream ss;
 		ss << "Check Charge: " << charge << " Overdraft Fee: " << overdraft;
@@ -47,10 +49,7 @@ protected:
 		double amt = balance*interest;
 		balance = balance + amt;
 		std::string fees = get_fees();
-		Transaction *tran = NULL;
-
-		// FIXME: Create a Transaction object and assign it to the transaction vector.
-
+		Transaction *tran = new Transaction(customer->getCustomer_number(), "interest" , amt, fees);
 		transactions.push_back(tran);
 	}
 
@@ -91,17 +90,18 @@ public:
 
 	/**
 	Generic method describing the account information.
-
-	Remember that you will need to indicate if an account is Savings or Checking in 
-	an overridden version of to_string() in the derived classes. 
-
+	Overridden version includes account type
 	@return string describing generic information about the account
 	*/
 	virtual std::string to_string() {
 		std::stringstream ss; // for composing the string that describes this account
 
 		// FIXME: Add information about the customer who owns this account.
-		
+		ss << "  Owner Name: " << customer->getName() << std::endl;
+		ss << "  Owner Phone Number: " << customer->getTelephone_number() << std::endl;
+		ss << "  Owner Age: " << customer->getAge() << std::endl;
+		ss << "  Owner Adress: " << customer->getAdress() << std::endl;
+		ss << "  Owner ID: " << customer->getCustomer_number() << std::endl;
 		ss << "  Balance: " << balance << std::endl;
 		ss << "  Account ID: " << account_number << std::endl;
 		return ss.str();
@@ -114,10 +114,7 @@ public:
 	virtual void deposit(double amt) {
 		balance += amt;
 		std::string fees = get_fees();
-		Transaction *tran = NULL;
-
-		// FIXME: Create a Transaction object and assign it to transaction vector.
-
+		Transaction *tran = new Transaction(customer->getCustomer_number(), "deposit", amt, fees);
 		transactions.push_back(tran);
 	}
 
@@ -128,10 +125,7 @@ public:
 	virtual void withdraw(double amt) {
 		balance -= amt;
 		std::string fees = get_fees();
-		Transaction *tran = NULL;
-
-		// FIXME: Create a Transaction object and assign it to tran.
-
+		Transaction *tran = new Transaction(customer->getCustomer_number(), "withdrow", amt, fees);
 		transactions.push_back(tran);
 	}
 
@@ -140,6 +134,68 @@ public:
 
 };
 
+
+
+
+///////////////////////////Savings account/////////////////////////////////////////
+
+class Savings_Acount : public Account {
+public:
+	std::string to_string() {
+		std::stringstream ss; // for composing the string that describes this account
+
+							  
+		ss << "  Owner Name: " << customer->getName() << std::endl;
+		ss << "  Owner Phone Number: " << customer->getTelephone_number() << std::endl;
+		ss << "  Owner Age: " << customer->getAge() << std::endl;
+		ss << "  Owner Adress: " << customer->getAdress() << std::endl;
+		ss << "  Owner ID: " << customer->getCustomer_number() << std::endl;
+		ss << "  Account Type: Savings" << std::endl;
+		ss << "  Balance: " << balance << std::endl;
+		ss << "  Account ID: " << account_number << std::endl;
+		return ss.str();
+	}
+
+
+	void add_interest() {
+		double amt = balance*customer->Get_SAVINGS_INTEREST();
+		balance = balance + amt;
+		std::string fees = get_fees();
+		Transaction *tran = new Transaction(customer->getCustomer_number(), "interest", amt, fees);
+		transactions.push_back(tran);
+	}
+};
+
+
+
+
+/////////////////////////////Checking Account//////////////////////////////////////////////
+
+class Checking_Acount : public Account {
+public:
+	std::string to_string() {
+		std::stringstream ss; // for composing the string that describes this account
+
+							
+		ss << "  Owner Name: " << customer->getName() << std::endl;
+		ss << "  Owner Phone Number: " << customer->getTelephone_number() << std::endl;
+		ss << "  Owner Age: " << customer->getAge() << std::endl;
+		ss << "  Owner Adress: " << customer->getAdress() << std::endl;
+		ss << "  Owner ID: " << customer->getCustomer_number() << std::endl;
+		ss << "  Account Type: Checking" << std::endl;
+		ss << "  Balance: " << balance << std::endl;
+		ss << "  Account ID: " << account_number << std::endl;
+		return ss.str();
+	}
+
+	void add_interest() {
+		double amt = balance*customer->Get_CHECK_INTEREST();
+		balance = balance + amt;
+		std::string fees = get_fees();
+		Transaction *tran = new Transaction(customer->getCustomer_number(), "interest", amt, fees);
+		transactions.push_back(tran);
+	}
+};
 
 
 #endif
