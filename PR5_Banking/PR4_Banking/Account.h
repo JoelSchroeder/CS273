@@ -58,7 +58,7 @@ public:
 	Constructor requires a customer to create an account
 	Balance always starts with 0 when account is created.
 	*/
-	Account(Customer *cust, int id) : customer(cust), account_number(id), balance(0) {}
+	explicit Account(Customer *cust, int id) : customer(cust), account_number(id), balance(0) {}
 
 	/**
 	Generic accesser and setter methods for properties customer, balance, and account_number
@@ -66,6 +66,10 @@ public:
 
 	Customer *get_customer() {
 		return customer;
+	}
+
+	std::string get_customer_name() {
+		return customer->getName();
 	}
 
 	void set_customer(Customer *cust) {
@@ -96,11 +100,11 @@ public:
 	virtual std::string to_string() {
 		std::stringstream ss; // for composing the string that describes this account
 
-		// FIXME: Add information about the customer who owns this account.
+		// Add information about the customer who owns this account.
 		ss << "  Owner Name: " << customer->getName() << std::endl;
 		ss << "  Owner Phone Number: " << customer->getTelephone_number() << std::endl;
 		ss << "  Owner Age: " << customer->getAge() << std::endl;
-		ss << "  Owner Adress: " << customer->getAdress() << std::endl;
+		ss << "  Owner Adress: " << customer->getAddress() << std::endl;
 		ss << "  Owner ID: " << customer->getCustomer_number() << std::endl;
 		ss << "  Balance: " << balance << std::endl;
 		ss << "  Account ID: " << account_number << std::endl;
@@ -141,6 +145,8 @@ public:
 
 class Savings_Acount : public Account {
 public:
+	using Account::Account;
+
 	std::string to_string() {
 		std::stringstream ss; // for composing the string that describes this account
 
@@ -148,7 +154,7 @@ public:
 		ss << "  Owner Name: " << customer->getName() << std::endl;
 		ss << "  Owner Phone Number: " << customer->getTelephone_number() << std::endl;
 		ss << "  Owner Age: " << customer->getAge() << std::endl;
-		ss << "  Owner Adress: " << customer->getAdress() << std::endl;
+		ss << "  Owner Adress: " << customer->getAddress() << std::endl;
 		ss << "  Owner ID: " << customer->getCustomer_number() << std::endl;
 		ss << "  Account Type: Savings" << std::endl;
 		ss << "  Balance: " << balance << std::endl;
@@ -173,6 +179,8 @@ public:
 
 class Checking_Acount : public Account {
 public:
+	using Account::Account;
+
 	std::string to_string() {
 		std::stringstream ss; // for composing the string that describes this account
 
@@ -180,7 +188,7 @@ public:
 		ss << "  Owner Name: " << customer->getName() << std::endl;
 		ss << "  Owner Phone Number: " << customer->getTelephone_number() << std::endl;
 		ss << "  Owner Age: " << customer->getAge() << std::endl;
-		ss << "  Owner Adress: " << customer->getAdress() << std::endl;
+		ss << "  Owner Adress: " << customer->getAddress() << std::endl;
 		ss << "  Owner ID: " << customer->getCustomer_number() << std::endl;
 		ss << "  Account Type: Checking" << std::endl;
 		ss << "  Balance: " << balance << std::endl;

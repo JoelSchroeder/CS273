@@ -13,16 +13,25 @@ as well as its own checking and overdraft fees.
 class Customer {
 protected:
 	std::string name;
-	std::string adress;
+	std::string address;
 	int age;
 	std::string telephone_number;
 	int customer_number;
 
 public:
+	explicit Customer(std::string nm, std::string adrs, int Age, std::string number, int id) {
+		name = nm;
+		address = adrs;
+		age = Age;
+		telephone_number = number;
+		customer_number = id;
+	}
+
 	virtual double Get_SAVINGS_INTEREST() = 0;
 	virtual double Get_CHECK_INTEREST() = 0;
 	virtual int Get_CHECK_CHARGE() = 0;
 	virtual int Get_OVERDREFT_PENELTY() = 0;
+
 
 
 	std::string getName() {
@@ -33,12 +42,12 @@ public:
 		name = n;
 	}
 
-	std::string getAdress() {
-		return adress;
+	std::string getAddress() {
+		return address;
 	}
 
-	void setAdress(std::string a) {
-		adress = a;
+	void setAddress(std::string a) {
+		address = a;
 	}
 
 	int getAge() {
@@ -76,6 +85,8 @@ private:
 	const int CHECK_CHARGE = 10;
 	const int OVERDREFT_PENELTY = 15;
 public:
+	using Customer::Customer;
+
 	double Get_SAVINGS_INTEREST() {
 		return SAVINGS_INTEREST;
 	}
@@ -101,6 +112,8 @@ private:
 	const int CHECK_CHARGE = 20;
 	const int OVERDREFT_PENELTY = 25;
 public:
+	using Customer::Customer;
+
 	double Get_SAVINGS_INTEREST() {
 		return SAVINGS_INTEREST;
 	}
@@ -126,6 +139,8 @@ private:
 	const int CHECK_CHARGE = 30;
 	const int OVERDREFT_PENELTY = 35;
 public:
+	using Customer::Customer;
+
 	double Get_SAVINGS_INTEREST() {
 		return SAVINGS_INTEREST;
 	}
