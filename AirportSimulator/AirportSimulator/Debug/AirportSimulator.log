@@ -1,0 +1,5 @@
+﻿  main.cpp
+\\cs1\2018\jschroeder18\cs-273-1\airportsimulator\airportsimulator\airportsimulator\servicequeue.h(49): warning C4018: '<': signed/unsigned mismatch
+\\cs1\2018\jschroeder18\cs-273-1\airportsimulator\airportsimulator\airportsimulator\servicequeue.h(68): warning C4018: '<': signed/unsigned mismatch
+  AirportSimulator.vcxproj -> \\cs1\2018\jschroeder18\CS-273-1\AirportSimulator\AirportSimulator\Debug\AirportSimulator.exe
+  AirportSimulator.vcxproj -> \\cs1\2018\jschroeder18\CS-273-1\AirportSimulator\AirportSimulator\Debug\AirportSimulator.pdb (Full PDB)
