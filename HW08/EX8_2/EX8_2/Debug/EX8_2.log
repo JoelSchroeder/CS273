@@ -1,0 +1,5 @@
+﻿  Source.cpp
+c:\users\jschroeder18\desktop\ex8_2\source.cpp(25): warning C4018: '<': signed/unsigned mismatch
+c:\users\jschroeder18\desktop\ex8_2\source.cpp(65): warning C4018: '<': signed/unsigned mismatch
+  EX8_2.vcxproj -> C:\Users\jschroeder18\Desktop\EX8_2\Debug\EX8_2.exe
+  EX8_2.vcxproj -> C:\Users\jschroeder18\Desktop\EX8_2\Debug\EX8_2.pdb (Full PDB)
