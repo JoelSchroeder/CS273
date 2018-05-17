@@ -1,0 +1,17 @@
+﻿  Source.cpp
+\\cs1\2018\jschroeder18\cs-273-1\final_project\pr_final_simulation\pr_final_simulation\emergency_room.h(54): error C2027: use of undefined type 'Waiting_Room'
+  \\cs1\2018\jschroeder18\cs-273-1\final_project\pr_final_simulation\pr_final_simulation\emergency_room.h(22): note: see declaration of 'Waiting_Room'
+\\cs1\2018\jschroeder18\cs-273-1\final_project\pr_final_simulation\pr_final_simulation\emergency_room.h(54): error C2227: left of '->patients' must point to class/struct/union/generic type
+\\cs1\2018\jschroeder18\cs-273-1\final_project\pr_final_simulation\pr_final_simulation\emergency_room.h(54): error C2228: left of '.top' must have class/struct/union
+\\cs1\2018\jschroeder18\cs-273-1\final_project\pr_final_simulation\pr_final_simulation\emergency_room.h(58): error C2027: use of undefined type 'Waiting_Room'
+  \\cs1\2018\jschroeder18\cs-273-1\final_project\pr_final_simulation\pr_final_simulation\emergency_room.h(22): note: see declaration of 'Waiting_Room'
+\\cs1\2018\jschroeder18\cs-273-1\final_project\pr_final_simulation\pr_final_simulation\emergency_room.h(58): error C2227: left of '->patients' must point to class/struct/union/generic type
+\\cs1\2018\jschroeder18\cs-273-1\final_project\pr_final_simulation\pr_final_simulation\emergency_room.h(58): error C2228: left of '.pop' must have class/struct/union
+\\cs1\2018\jschroeder18\cs-273-1\final_project\pr_final_simulation\pr_final_simulation\emergency_room.h(69): error C2027: use of undefined type 'Waiting_Room'
+  \\cs1\2018\jschroeder18\cs-273-1\final_project\pr_final_simulation\pr_final_simulation\emergency_room.h(22): note: see declaration of 'Waiting_Room'
+\\cs1\2018\jschroeder18\cs-273-1\final_project\pr_final_simulation\pr_final_simulation\emergency_room.h(69): error C2227: left of '->patients' must point to class/struct/union/generic type
+\\cs1\2018\jschroeder18\cs-273-1\final_project\pr_final_simulation\pr_final_simulation\emergency_room.h(69): error C2228: left of '.pop' must have class/struct/union
+\\cs1\2018\jschroeder18\cs-273-1\final_project\pr_final_simulation\pr_final_simulation\emergency_room.h(81): error C2027: use of undefined type 'Waiting_Room'
+  \\cs1\2018\jschroeder18\cs-273-1\final_project\pr_final_simulation\pr_final_simulation\emergency_room.h(22): note: see declaration of 'Waiting_Room'
+\\cs1\2018\jschroeder18\cs-273-1\final_project\pr_final_simulation\pr_final_simulation\emergency_room.h(81): error C2227: left of '->patients' must point to class/struct/union/generic type
+\\cs1\2018\jschroeder18\cs-273-1\final_project\pr_final_simulation\pr_final_simulation\emergency_room.h(81): error C2228: left of '.pop' must have class/struct/union
